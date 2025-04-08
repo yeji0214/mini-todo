@@ -1,11 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import TodoInputBar from './components/TodoInputBar';
+import TodoList from './components/TodoList';
 
 function App() {
   return (
-    <TodoInputBar />
+    <div>
+      <TodoInputBar />
+      <TodoList />
+    </div>
   );
 }
 
