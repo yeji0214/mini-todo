@@ -1,8 +1,18 @@
+import { useRef } from "react";
+
 const TodoInputBar = () => {
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    const addTodo = () => {
+        if (inputRef.current) {
+            alert(inputRef.current.value);
+        }
+    }
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="w-[300px] flex gap-2">
+      <div className="flex items-center justify-center w-full">
+        <div className="flex gap-2">
           <input
+            ref={inputRef}
             type="text"
             id="input"
             required
@@ -12,6 +22,7 @@ const TodoInputBar = () => {
           <button
             type="button"
             className="px-4 py-2 bg-pink-300 text-white rounded-lg hover:bg-pink-400 transition"
+            onClick={addTodo}
           >
             +
           </button>
